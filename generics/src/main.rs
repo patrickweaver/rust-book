@@ -45,11 +45,14 @@ fn main() {
     println!("float_point.x = {}", float_point.x());
 
     //println!("distance integer_point: {}", integer_point.distance_from_origin());
-    println!("distance float_point: {}", float_point.distance_from_origin());
+    println!(
+        "distance float_point: {}",
+        float_point.distance_from_origin()
+    );
 
-    let both_integer = PointBoth { x: 5, y: 10};
+    let both_integer = PointBoth { x: 5, y: 10 };
     let both_float = PointBoth { x: 1.0, y: 4.0 };
-    let integer_and_float = PointBoth{ x: 5, y: 4.0};
+    let integer_and_float = PointBoth { x: 5, y: 4.0 };
 
     println!("{:?}", both_integer);
     println!("{:?}", both_float);
@@ -63,6 +66,6 @@ fn main() {
 //         if item > largest {
 //             largest = item;
 //         }
-//     } 
+//     }
 //     largest
 // }

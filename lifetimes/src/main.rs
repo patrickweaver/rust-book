@@ -10,7 +10,6 @@ impl<'a> ImportantExcerpt<'a> {
     }
 }
 
-
 fn main() {
     let string1 = String::from("abcd");
     let string2 = "xyz";
@@ -29,14 +28,17 @@ fn main() {
     //println!("The longest string is {}", result2);
 
     let novel = String::from("Call me Ishmael. Some years ago...");
-    let first_sentence = novel.split(".")
-        .next()
-        .expect("Could not find a '.'");
-    let i = ImportantExcerpt { part: first_sentence };
+    let first_sentence = novel.split(".").next().expect("Could not find a '.'");
+    let i = ImportantExcerpt {
+        part: first_sentence,
+    };
 
     println!("excerpt: {} ({})", i.part, i.level());
 
-    println!("a: {}", longest_with_an_announcement(string1.as_str(), string2, 5));
+    println!(
+        "a: {}",
+        longest_with_an_announcement(string1.as_str(), string2, 5)
+    );
 }
 
 fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
@@ -48,13 +50,13 @@ fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
 }
 
 fn longest_with_an_announcement<'a, T>(x: &'a str, y: &'a str, ann: T) -> &'a str
-    where T: Display
+where
+    T: Display,
 {
-    println!("Announcemnt! {}", ann);
+    println!("Announcement! {}", ann);
     if x.len() > y.len() {
         x
     } else {
         y
     }
-
 }

@@ -1,5 +1,4 @@
 fn main() {
-    
     #[derive(Debug)]
     enum IpAddrKind {
         V4,
@@ -23,7 +22,7 @@ fn main() {
     };
 
     println!("{:?}", home1);
-    println!("{:?}", loopback1  );
+    println!("{:?}", loopback1);
 
     #[derive(Debug)]
     enum IpAddr2 {
@@ -53,13 +52,12 @@ fn main() {
 
     let m = Message::Write(String::from("hello"));
     let q = Message::Quit;
-    let mo = Message::Move{ x: 5, y: 6 };
+    let mo = Message::Move { x: 5, y: 6 };
     let cc = Message::ChangeColor(12, 13, 14);
     m.call();
     q.call();
     mo.call();
     cc.call();
-
 
     #[derive(Debug)]
     enum UsState {
@@ -79,13 +77,13 @@ fn main() {
             Coin::Penny => {
                 println!("Lucky penny!");
                 1
-            },
+            }
             Coin::Nickel => 5,
             Coin::Dime => 10,
             Coin::Quarter(state) => {
                 println!("State quarter from {:?}!", state);
                 25
-            },
+            }
         }
     }
 
@@ -121,7 +119,6 @@ fn main() {
     println!("six: {:?}", six);
     println!("none: {:?}", none);
 
-
     let some_u8_value = 0u8;
     match some_u8_value {
         1 => println!("one"),
@@ -151,5 +148,4 @@ fn main() {
     } else {
         println!("NOT THREE")
     }
-
 }
